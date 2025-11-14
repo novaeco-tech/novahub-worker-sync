@@ -1,0 +1,7 @@
+# Example:
+# pika
+# requests
+# python-dotenv
+
+# For testing:
+pytest

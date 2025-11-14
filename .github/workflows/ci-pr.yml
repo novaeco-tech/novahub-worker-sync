@@ -1,0 +1,19 @@
+name: CI (Pull Request)
+
+on: [pull_request]
+
+jobs:
+  unit-test:
+    runs-on: ubuntu-latest
+    # Run this job using the same container our devs use
+    container: ghcr.io/nova-ecosystem/dev-python:latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install Dependencies
+        run: pip install -r src/requirements.txt
+
+      - name: Run Unit Tests
+        run: pytest tests/
