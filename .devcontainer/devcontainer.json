@@ -1,10 +1,9 @@
 {
-    "name": "Hub Worker: Sync",
+    "name": "NovaHub Worker: Sync",
     // Use the pre-built Python image from our devtools repo
-    "image": "ghcr.io/nova-ecosystem/dev-python:latest",
+    "image": "ghcr.io/novaeco-tech/dev-python:latest",
     // Mount the entire repo into /workspace
     "workspaceFolder": "/workspace",
-    "mounts": ,
     // Run this command after the container is created
     "postCreateCommand": "pip install -r src/requirements.txt",
     "customizations": {

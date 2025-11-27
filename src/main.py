@@ -17,7 +17,7 @@ def on_message(channel, method, properties, body):
 
 def start_worker():
     """Main worker loop."""
-    print("Starting hub-worker-sync...")
+    print("Starting novahub-worker-sync...")
     connect_to_queue()
     
     print("Worker is waiting for messages. To exit press CTRL+C")

@@ -6,7 +6,7 @@ jobs:
   unit-test:
     runs-on: ubuntu-latest
     # Run this job using the same container our devs use
-    container: ghcr.io/nova-ecosystem/dev-python:latest
+    container: ghcr.io/novaeco-tech/dev-python:latest
 
     steps:
       - name: Checkout repository

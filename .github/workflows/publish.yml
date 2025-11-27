@@ -1,4 +1,4 @@
-name: Publish Worker Artifact (hub-worker-sync)
+name: Publish Worker Artifact (novahub-worker-sync)
 
 on:
   push:
@@ -31,22 +31,22 @@ jobs:
         id: create_release
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: "hub-worker-sync-v${{ env.VERSION }}"
-          name: "Hub Worker Sync v${{ env.VERSION }}"
+          tag_name: "novahub-worker-sync-v${{ env.VERSION }}"
+          name: "NovaHub Worker Sync v${{ env.VERSION }}"
           files: "worker.tar.gz"
           prerelease: true # CRITICAL: Mark as "Pre-release"
 
       - name: Dispatch QA
         # This triggers the ecosystem-qa repo to test this new pre-release
-        # The 'intra-hub' test suite should test the 'hub' enabler AND its workers
+        # The 'intra-novahub' test suite should test the 'novahub' enabler AND its workers
         run: |
-          gh api repos/nova-ecosystem/ecosystem-qa/dispatches \
+          gh api repos/novaeco-tech/ecosystem-qa/dispatches \
             -f event_type='qa-run' \
             -f client_payload='{
-                "tag": "hub-worker-sync-v${{ env.VERSION }}", 
-                "repo": "hub-worker-sync", 
-                "test_suite": "intra-hub",
-                "test_suite_path": "intra_enabler/test_hub_and_worker.py"
+                "tag": "novahub-worker-sync-v${{ env.VERSION }}", 
+                "repo": "novahub-worker-sync", 
+                "test_suite": "intra-novahub",
+                "test_suite_path": "intra_enabler/test_novahub_and_worker.py"
               }'
         env:
           # A PAT with 'repo' scope is needed to trigger repository_dispatch
