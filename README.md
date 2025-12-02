@@ -1,17 +1,4 @@
-# novahub-worker-sync
+# novaair-worker-quality
 
-This is a decoupled worker service for the `NovaHub` enabler.
-
-This service is intentionally decoupled from the main `novhub-api` to ensure that a failure in this non-essential sync task can never crash the user-facing API.
-
-## 🚀 Getting Started (Local Development)
-
-This repository is configured to use **DevContainers** for a one-click setup.
-
-1.  Make sure you have([https://www.docker.com/products/docker-desktop/](https://www.docker.com/products/docker-desktop/)) installed and running.
-2.  Install the([https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers)) in VS Code.
-3.  Clone this repository: `git clone https://github.com/novaeco-tech/novahub-worker-sync.git`
-4.  Open the cloned folder in VS Code.
-5.  A pop-up will appear: "Folder contains a Dev Container... Reopen in Container?". Click **"Reopen in Container"**.
-
-This will instantly download the pre-built `dev-python` image and install the dependencies from `src/requirements.txt`.
+This is a decoupled worker service for the `NovaAir` sector.
+Ingests and normalizes data from air quality sensors.
